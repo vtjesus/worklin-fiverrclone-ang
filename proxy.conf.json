@@ -1,0 +1,8 @@
+{
+  "/": {
+    "target": "https://worklin.shop",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

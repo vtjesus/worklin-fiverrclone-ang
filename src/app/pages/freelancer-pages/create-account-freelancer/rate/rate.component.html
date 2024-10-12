@@ -1,0 +1,39 @@
+<div class="flex justify-center items-center min-h-screen">
+  <div class="w-full max-w-4xl bg-white rounded-lg p-8 flex flex-col justify-between h-full">
+    <div class="flex flex-col md:flex-row justify-between items-start mb-6 space-y-6 md:space-y-0 md:space-x-12">
+      <div class="md:w-1/2">
+        <h2 class="text-lg font-semibold text-green-700">9/10</h2>
+        <h1 class="text-2xl font-bold text-gray-900 mt-2">Now, let’s set your hourly rate.</h1>
+        <p class="text-gray-700 mt-2">
+          Clients will see this rate on your profile and in search results once you publish your profile. You can adjust your rate every time you submit a proposal.
+        </p>
+      </div>
+
+      <div class="flex flex-col md:w-1/2 space-y-6">
+        <div>
+          <label for="hourly-rate" class="block text-gray-700 font-medium mb-2">Hourly rate</label>
+          <div class="flex items-center">
+            <input type="number" id="hourly-rate" class="border rounded px-3 py-2 w-full" placeholder="$0.00" [(ngModel)]="hourlyRate" (ngModelChange)="validateInput()">
+            <span class="ml-2 text-gray-700">/hr</span>
+          </div>
+          <small *ngIf="rateError" class="text-red-500 mt-1 block">Please enter your hourly rate.</small>
+          <small class="text-gray-500 mt-1 block">Total amount the client will see.</small>
+        </div>
+
+        <div>
+          <label for="service-fee" class="block text-gray-700 font-medium mb-2">Service fee</label>
+          <div class="flex items-center">
+            <input type="number" id="service-fee" class="border rounded px-3 py-2 w-full" placeholder="-$0.00" [(ngModel)]="serviceFee" (ngModelChange)="validateInput()">
+            <span class="ml-2 text-gray-700">/hr</span>
+          </div>
+          <small class="text-gray-500 mt-1 block">This helps us run the platform and provide services like payment protection and customer support.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="flex justify-between items-center mt-6 bg-white w-full p-4 border-t ">
+  <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded">Back</button>
+  <button class="bg-green-600 text-white px-6 py-2 rounded" (click)="submitData()">Next, add your photo and location</button>
+</div>
